@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+    <!-- Remotes -->
+    <remote name="deadlylxrd-project"
+            fetch="https://github.com/deadlylxrd-project" />
+    <remote name="mi-sdm439"
+            fetch="https://github.com/mi-sdm439" />
+    <remote name="sdm439-devs"
+            fetch="https://github.com/xiaomi-sdm439-devs" />
+    <remote name="LineageOS"
+            fetch="https://github.com/LineageOS" />
+
+    <!-- Device repos -->
+    <project path="device/xiaomi/olive" name="device_xiaomi_olive" remote="deadlylxrd-project" revision="crdroid" clone-depth="1" />
+    <project path="device/xiaomi/sdm439-common" name="device_xiaomi_sdm439-common" remote="deadlylxrd-project" revision="crdroid" clone-depth="1" />
+    <project path="vendor/xiaomi/olive" name="proprietary_vendor_xiaomi_olive" remote="mi-sdm439" revision="lineage-18.1" clone-depth="1" />
+    <project path="vendor/xiaomi/sdm439-common" name="proprietary_vendor_xiaomi_sdm439-common" remote="mi-sdm439" revision="lineage-18.1" clone-depth="1" />
+    <project path="kernel/xiaomi/sdm439" name="android_kernel_xiaomi_sdm439" remote="sdm439-devs" revision="a11/main-kud-rb" clone-depth="1" />
+
+    <!-- Patches -->
+    <remove-project name="crdroidandroid/android_hardware_qcom_audio" />
+    <project path="hardware/qcom-caf/msm8996/audio" name="android_hardware_qcom_audio" remote="LineageOS" revision="lineage-18.1-caf-msm8996" clone-depth="1" />
+    <remove-project name="crdroidandroid/android_hardware_qcom_media" />
+    <project path="hardware/qcom-caf/msm8996/media" name="android_hardware_qcom_media" remote="LineageOS" revision="lineage-18.1-caf-msm8996" clone-depth="1" />
+    <remove-project name="crdroidandroid/android_hardware_qcom_display" />
+    <project path="hardware/qcom-caf/msm8996/display" name="android_hardware_qcom_display" remote="mi-sdm439" revision="lineage-18.1-caf-msm8996" clone-depth="1" />
+
+    <!-- Extra -->
+    <remove-project name="LineageOS/android_packages_apps_FMRadio" />
+    <project path="packages/apps/FMRadio" name="android_packages_apps_FMRadio" remote="mi-sdm439" revision="lineage-18.1" clone-depth="1" />
+
+    <project path="vendor/gapps" name="crdroidandroid/android_vendor_gapps" remote="crdroid-gitlab" revision="11.0" clone-depth="1" />
+
+</manifest>
